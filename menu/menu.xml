@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+  
+  
+    <!-- Action du menu Etudiant -->
+        <record model="ir.actions.act_window" id="pdfaye_etudiant_action">
+          <field name="name">Etudiant</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">tp.etudiant.pdfaye</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+        </record> 
+    
+        
+    <!-- Menu de haut -->   
+      <menuitem name="INSCRIPTIONS ETUDIANTS" id="pdfaye_etudiant_menu" web_icon="tp_student_papa_daouda_faye,images/icone.png"
+            sequence="10" 
+            />
+        <!-- Troixieme sous menu  -->
+        <menuitem name="Parametrage" id="menu_parametrage" parent="pdfaye_etudiant_menu"
+            sequence="3" 
+            />
+          <menuitem name="Etudiants" id="menu_param_etudiant" parent="menu_parametrage" action="pdfaye_etudiant_action" 
+            sequence="1" 
+            />
+          <menuitem name="Domaines d'études" id="menu_param_domaine" parent="menu_parametrage" action="pdfaye_etablissement_action" 
+            sequence="2" 
+            />
+          <menuitem name="Facultés" id="menu_param_faculte" parent="menu_parametrage" action="pdfaye_faculte_action" 
+            sequence="3" 
+            />
+          <menuitem name="Départements" id="menu_param_departement" parent="menu_parametrage" action="pdfaye_departement_action" 
+            sequence="4" 
+            />
+          <menuitem name="Filliere" id="menu_param_filliere" parent="menu_parametrage" 
+            sequence="5" 
+            />
+            <menuitem name="Fillieres" id="menu_param_fillieres" parent="menu_param_filliere" action="pdfaye_filliere_action" 
+            sequence="1" 
+            />
+            <menuitem name="Classes" id="menu_param_classe" parent="menu_param_filliere" action="pdfaye_classe_action" 
+            sequence="2" 
+            />
+            <menuitem name="UE" id="menu_param_ue" parent="menu_param_filliere" action="pdfaye_ue_action" 
+            sequence="3" 
+            />
+            <menuitem name="EC" id="menu_param_ec" parent="menu_param_filliere" action="pdfaye_ec_action" 
+            sequence="4" 
+            />
+          <!-- Premier sous menu  -->
+          <menuitem name="Inscription" id="menu_configuration" parent="pdfaye_etudiant_menu"
+              sequence="1" 
+              />
+            <menuitem name="Préinscription" id="menu_conf_etudiant" parent="menu_configuration" action="pdfaye_etudiant_action" 
+              sequence="1" 
+              />
+              <menuitem name="Fillieres" id="menu_param_fillieres" parent="menu_configuration" action="pdfaye_filliere_action" 
+            sequence="2" 
+            />
+
+          
+  
+
+    </data>
+</odoo>

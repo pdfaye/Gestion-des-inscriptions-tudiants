@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <report
+        id="rapport_etudiant_carte"
+        string="Carte étudiant"
+        model="tp.etudiant.pdfaye"
+        report_type="qweb-pdf"
+        name="tp_student_papa_daouda_faye.rapport_etudiant"
+        file="tp_student_papa_daouda_faye.rapport_etudiant"    />
+
+
+        <report
+        id="rapport_etudiant_inscription"
+        string="Cerificar d'inscription"
+        model="tp.etudiant.pdfaye"
+        report_type="qweb-pdf"
+        name="tp_student_papa_daouda_faye.rapport_etudiant_inscription"
+        file="tp_student_papa_daouda_faye.rapport_etudiant_inscription" />
+
+        <report
+        id="rapport_etudiant_liste"
+        string="Liste Etudiant"
+        model="tp.filliere.pdfaye"
+        report_type="qweb-pdf"
+        name="tp_student_papa_daouda_faye.rapport_etudiant_liste"
+        file="tp_student_papa_daouda_faye.rapport_etudiant_liste"    />
+</odoo>

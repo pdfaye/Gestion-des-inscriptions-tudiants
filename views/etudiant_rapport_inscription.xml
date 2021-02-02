@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="tp_student_papa_daouda_faye.rapport_etudiant_inscription">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="container" style="border: 3px solid blue;margin-top:0px; background-color:gray;">
+                        <t t-foreach="o" t-as="student"> 
+                                               
+                                <div>
+                                    
+                                    <p style="font-size:38px; ;text-align:center;"><span t-field="student.numero_seq" /></p>
+                                    <p style="font-size:28px; "><strong>
+                                            <span t-field="student.first_name" /> </strong> 
+                                            <strong><span t-field="student.last_name" /></strong>
+                                    </p>
+                                </div>
+
+
+                                   
+                            <p style="font-size:50px;font-weight:bold; color:blue; text-align:center;"><strong>Certificat d'Inscription</strong></p>
+                              <hr/>      
+                            <div class="row">
+                                
+                                <div class="col-3" style="font-family: 'Helvetica';padding-left:20px; font-size:16px;">
+                                    
+                                    <p><strong>Cycle d'étude:</strong><span t-field="student.cycle"/></p>
+                                    <p><strong>Année:</strong> <span t-field="student.licence"/><span t-field="student.master"/>
+                                    <span t-field="student.doctorat"/></p>
+                                    
+                                </div>
+                                <div class="col-4" style="font-family: 'Helvetica';padding-left:20px;font-size:22px;">
+                                    <p><strong>Etablissement:</strong><span t-field="student.etablissement_id"/></p>
+                                    <p><strong>Faculté:</strong><span t-field="student.faculte_id"/></p>
+                                    <p><strong>Département:</strong><span t-field="student.departement_id"/></p>
+                                </div>    
+                                <div class="col-4" style="font-family: 'Helvetica';padding-left:20px;font-size:22px;">
+                                    
+                                    <p><strong>Domaine d'étude:</strong><span t-field="student.filliere_id"/></p>
+                                    <p><strong>Les UE suivis:</strong><span t-field="student.ue_ids"/></p>
+                                </div>                                
+                            </div>
+                        </t>
+                   </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

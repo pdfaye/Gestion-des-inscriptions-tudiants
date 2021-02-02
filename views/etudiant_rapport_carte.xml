@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="tp_student_papa_daouda_faye.rapport_etudiant">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="container" style="border: 3px solid blue;margin-top:0px; background-color:cyan;">
+                        <t t-foreach="o" t-as="student"> 
+                             <div class="row"> 
+                                <div class="col-5">
+                                    <p style="border: 3px solid blue;font-size:35px; color:blue"><strong><span t-field="student.etablissement_id"/></strong></p>
+                                        
+
+                                </div> 
+                                <div class="col-3" >
+                                    
+                                    
+                                </div>    
+                                <div class="col-4">
+                                <p style="border: 3px solid blue;font-size:35px; color:blue;"><span t-field="student.faculte_id"/></p>
+                                    
+
+                                </div>
+                            </div> 
+                            <div style="text-align:center;">
+                                    <p style="font-size:45px; color:white;">
+                                        <strong><span t-field="student.numero_seq" /></strong></p>
+                               </div>               
+                                
+                                <div>
+                                                                
+                                        <p style="font-size:35px; color:white;">
+                                            <span t-field="student.first_name" />
+
+                                            <span t-field="student.last_name" />
+                                        </p>
+                                </div>
+                            <div class="row">
+                                <div class="col-4" style="margin-top:50px;font-size:22px;">                      
+                                    <p>Tel:<span t-field="student.telephone_etudiant" /></p>
+                                    <p style="color:blue; font-size:18px;">Email Personnel: <span t-field="student.email_personnel" /></p>
+                                 </div> 
+
+                                <div class="col-4">
+                                 </div>
+                                <div class="col-3">
+                                        <img t-if="student.photo" t-att-src="'data:image/png;base64,%s' % to_text(student.photo)"
+                                             style="height:200px;width=190px" />
+
+                                </div> 
+                            </div>            
+                            
+                                                                 
+                            
+                            
+                        </t>
+                   </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

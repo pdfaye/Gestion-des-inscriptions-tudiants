@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<odoo>
+    <template id="tp_student_papa_daouda_faye.rapport_etudiant_liste">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="container" style="border: 3px solid blue;margin-top:0px; background-color:gray;">
+                        <t t-foreach="o" t-as="student"> 
+                             <div class="row"> 
+                                <div class="col-5">
+                                    <p style="border: 3px solid blue;font-size:35px; color:blue"><strong><span t-field="student.departement_id"/></strong></p>
+                                        
+
+                                </div> 
+                                <div class="col-5" >
+                                    <p style="font-size:45px; color:blue;">
+                                        <strong><span t-field="student.nom_fil" /></strong></p>
+                                    
+                                </div>    
+                                
+                            </div>             
+                               <div style="color:red; font-size:22px; text-align:center;"> La liste des étudiants inscrits</div>
+                                <div>
+                                    
+                                    <table class="table">
+                                       <thead><tr> <th>Numéro carte</th><th>Nom</th><th>Prenom</th><th>Telephone</th><th>Telephone</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                                                
+                                        <t t-foreach="student.etudiant_ids" t-as="e">
+                                            <tr>
+                                            <td><span t-field="e.numero_seq" /></td> 
+                                            <td><span t-field="e.first_name" /></td>
+                                            <td><span t-field="e.last_name" /></td>                                                                         
+                                            <td><span t-field="e.telephone_etudiant" /></td>                                                                              
+                                            <td><span t-field="e.email_personnel" />
+                                            </td>
+                                            </tr>
+                                            </t>
+                                        </tbody>
+                                    </table>
+                                        
+                                </div>
+
+                                  
+                            
+                                                                 
+                            
+                            
+                        </t>
+                   </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

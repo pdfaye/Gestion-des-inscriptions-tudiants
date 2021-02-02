@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+    
+       
+        
+        
+        <!-- La vue Tree Etudiant -->
+        <record id="pdfaye_etudiant_tree" model="ir.ui.view">
+            <field name="name">pdfaye_etudiant_tree</field>
+            <field name="model">tp.etudiant.pdfaye</field>
+            <field name="arch" type="xml">
+                <tree string="Etudiant">
+                    <field name="numero_seq"/>
+                    <field name="first_name"/>
+                    <field name="last_name"/>
+                    <field name="email_personnel"/>
+                    <field name="telephone_etudiant"/>
+                </tree>
+            </field>
+        </record>
+
+
+       <!-- La vue Formulaire Etudiant -->
+       <record id="pdfaye_etudiant_form" model="ir.ui.view">
+            <field name="name">pdfaye_etudiant_form</field>
+            <field name="model">tp.etudiant.pdfaye</field>
+            <field name="arch" type="xml">
+              <form string="Etudiant" version="7.0"> 
+                <sheet>
+                    <div class="oe_inline">
+                      <newline />
+                      <separator string="Informations Personnelles" />
+                      <b>
+                          <field name="numero_seq" readonly="1" />
+                      </b>
+                      <br />                
+                      <field name="photo" widget="image" class="oe_avatar oe_left" style="max-width:100px;max-height:117px;"/>
+                      <div class="oe_title">
+                        <group>
+                          <field name="first_name"/>
+                          <field name="last_name"/>                                               
+                        </group> 
+                      </div>
+                    </div>
+                    <group string="Informations Générales"> 
+                      <group>
+                        <field name="date_naissance"/>                      
+                        <field name="lieu_naissance"/>
+                        <field name="region_naissance"/>
+                        <field name="nationality_id"/>
+                      </group>
+                      <group string="Adresse Actuelle">
+                        <field name="telephone_etudiant"/>
+                        <field name="email_personnel"/>
+                        <field name="adresse"/>
+                      </group>
+                    </group>
+                    <notebook>               
+                      <page string="Situation de actuelle"> 
+                        <group>
+                          <group string="Emploi">
+                            <field name="categorie_socioprofessionnelle"/>
+                            <field name="statut_etudiant"/>
+                          </group>
+                          <group string="Situation Familiale">
+                            <field name="situation_matrimoniale"/>
+                            <field name="nombre_enfant"/>
+                          </group>
+                        </group>
+                    </page>
+                    <page string="Bourse">
+                      <group>                   
+                        <field name="boursier"/>
+                        <field name="type_bourse" attrs="{'invisible':[('boursier','==',False)]}"/>
+                        <field name="montant_bourse" attrs="{'invisible':[('boursier','==',False)]}"/>
+                      </group>
+                    </page>
+                    <page string="Curriculum"> 
+                      <group>
+                        <group>
+                          <field name="serie_bac"/>
+                          <field name="annee_bac"/>
+                        </group>
+                        <group>
+                          <field name="mention"/>
+                          <field name="lieu"/>
+                        </group>
+                      </group>
+                    </page>
+                    <page string="Responsable à contacter">
+                      <group> 
+                        <group>
+                          <field name="tuteur" />
+                        </group>
+                        <group>
+                          <field name="nom_tuteur" attrs="{'invisible':[('tuteur','==','father')]}"/>
+                          <field name="prenom_tuteur"/>
+                          <field name="telephone_tuteur"/>
+                        </group>
+                      </group>
+                    </page>
+                 </notebook>
+                 <notebook>               
+                    <page string="Inscription Annuelle"> 
+                      <group>
+                        <group string="Niveau d'étude">
+                          <field name="cycle" />
+                          <field name="licence" attrs="{'invisible':[('cycle','!=','l')]}"/>
+                          <field name="master" attrs="{'invisible':[('cycle','!=','m')]}"/>
+                          <field name="doctorat" attrs="{'invisible':[('cycle','!=','d')]}"/>
+                        </group>
+                        <group string="Domaine d'étude">
+                          <field name="filliere_id" required="1" options="{'no_create': True}"/>
+                          <field name="ue_ids"  />
+                          <field name="departement_id" options="{'no_create': True}" attrs="{'invisible':[('filliere_id','==','')]}"/>
+                          <field name="faculte_id" options="{'no_create': True}" attrs="{'invisible':[('filliere_id','==','')]}" />
+                          <field name="etablissement_id" options="{'no_create': True}" attrs="{'invisible':[('filliere_id','==','')]}" />
+                        </group>
+                      </group>
+                    </page> 
+                    
+                 </notebook>
+                </sheet>
+              </form>
+            </field>
+        </record>
+
+         <!-- La vue Recherche Etudiant -->
+        <!-- <record id="pdfaye_etudiant_form" model="ir.ui.view">
+            <field name="name">pdfaye_etudiant_search</field>
+            <field name="model">tp.etudiant.pdfaye</field>
+            <field name="arch" type="xml">
+              <search string="Etudiant" version="7.0">                  
+                <field name="numero"/>
+                <field name="first_name"/>
+                <field name="last_name"/>
+                <field name="email_personnel"/>
+              </search>
+            </field>
+        </record> -->
+
+
+
+        <!-- Action du menu Etudiant -->
+        <record model="ir.actions.act_window" id="pdfaye_etudiant_action">
+          <field name="name">Etudiant Action Menu</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">tp.etudiant.pdfaye</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+
+      
+
+
+    </data>
+</odoo>

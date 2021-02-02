@@ -1,0 +1,279 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+<odoo>
+    <data>
+    
+       
+        
+        
+        
+        <!-- La vue Tree Etablissement -->
+        <record id="pdfaye_etablissement_tree" model="ir.ui.view">
+            <field name="name">pdfaye_etablissement_tree</field>
+            <field name="model">tp.etablissement.pdfaye</field>
+            <field name="arch" type="xml">
+                <tree string="Etablissement">
+                  <field name="nom_eta"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!-- La vue Formulaire Etablissement -->
+        <record id="pdfaye_etablissement_form" model="ir.ui.view">
+            <field name="name">pdfaye_etablissement_form</field>
+            <field name="model">tp.etablissement.pdfaye</field>
+            <field name="arch" type="xml">
+              <form string="Etablissement" version="7.0"> 
+                <group>                  
+                  <field name="nom_eta"/>
+                  <field name="etudiant_ids"/>
+                  <field name="faculte_ids"/>
+                </group>
+              </form>
+            </field>
+        </record>
+
+
+        <!-- Action du menu etablissement -->
+        <record model="ir.actions.act_window" id="pdfaye_etablissement_action">
+          <field name="name">Etablissement Action Menu</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">tp.etablissement.pdfaye</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- La vue Tree Faculte -->
+        <record id="pdfaye_faculte_tree" model="ir.ui.view">
+            <field name="name">pdfaye_faculte_tree</field>
+            <field name="model">tp.faculte.pdfaye</field>
+            <field name="arch" type="xml">
+                <tree string="Faculte">
+                  <field name="nom_fac"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- La vue Formulaire Faculte -->
+        <record id="pdfaye_faculte_form" model="ir.ui.view">
+            <field name="name">pdfaye_faculte_form</field>
+            <field name="model">tp.faculte.pdfaye</field>
+            <field name="arch" type="xml">
+              <form string="Faculté:" version="7.0"> 
+                <group>                  
+                  <field name="nom_fac"/>
+                  <field name="etablissement_id"/>
+                  <field name="departement_ids"/>
+                  <field name="etudiant_ids"/>
+                </group>
+              </form>
+            </field>
+        </record>
+
+
+        <!-- Action du menu Faculté -->
+        <record model="ir.actions.act_window" id="pdfaye_faculte_action">
+          <field name="name">Faculté Action Menu</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">tp.faculte.pdfaye</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!-- La vue Tree Departement -->
+        <record id="pdfaye_departement_tree" model="ir.ui.view">
+            <field name="name">pdfaye_departement_tree</field>
+            <field name="model">tp.departement.pdfaye</field>
+            <field name="arch" type="xml">
+                <tree string="Département">
+                  <field name="nom_dep"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- La vue Formulaire Département -->
+        <record id="pdfaye_departement_form" model="ir.ui.view">
+            <field name="name">pdfaye_departement_form</field>
+            <field name="model">tp.departement.pdfaye</field>
+            <field name="arch" type="xml">
+              <form string="Département :" version="7.0"> 
+                <group>                  
+                  <field name="nom_dep"/>
+                  <field name="faculte_id"/>
+                  <field name="filliere_ids"/>
+                  <field name="etudiant_ids"/>
+                </group>
+              </form>
+            </field>
+        </record>
+
+
+        <!-- Action du menu Département -->
+        <record model="ir.actions.act_window" id="pdfaye_departement_action">
+          <field name="name">Departement Action Menu</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">tp.departement.pdfaye</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+        <!-- La vue Tree Filliere -->
+        <record id="pdfaye_etablissement_tree" model="ir.ui.view">
+            <field name="name">pdfaye_filliere_tree</field>
+            <field name="model">tp.filliere.pdfaye</field>
+            <field name="arch" type="xml">
+                <tree string="Filliere">
+                  <field name="nom_fil"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- La vue Formulaire Filliere -->
+        <record id="pdfaye_filliere_form" model="ir.ui.view">
+            <field name="name">pdfaye_filliere_form</field>
+            <field name="model">tp.filliere.pdfaye</field>
+            <field name="arch" type="xml">
+              <form string="Fillière" version="7.0"> 
+                <group>                  
+                  <field name="nom_fil"/>
+                  <field name="departement_id"/>
+                  <field name="etudiant_ids"/>
+                </group>
+              </form>
+            </field>
+        </record>
+
+        <!-- Action du menu Filliere -->
+        <record model="ir.actions.act_window" id="pdfaye_filliere_action">
+          <field name="name">Fillier Action Menu</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">tp.filliere.pdfaye</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+        <!-- La vue Tree Classe -->
+        <record id="pdfaye_etablissement_tree" model="ir.ui.view">
+            <field name="name">pdfaye_classe_tree</field>
+            <field name="model">tp.classe.pdfaye</field>
+            <field name="arch" type="xml">
+                <tree string="Classe">
+                  <field name="nom_clas"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- La vue Formulaire Classe -->
+        <record id="pdfaye_classe_form" model="ir.ui.view">
+            <field name="name">pdfaye_classe_form</field>
+            <field name="model">tp.classe.pdfaye</field>
+            <field name="arch" type="xml">
+              <form string="Classe" version="7.0"> 
+                <group>                  
+                  <field name="nom_clas"/>
+                  <field name="filliere_id"/>
+                  <field name="etudiant_ids"/>
+                  <field name="eu_ids"/>
+                </group>
+              </form>
+            </field>
+        </record>
+
+        <!-- Action du menu Classe -->
+        <record model="ir.actions.act_window" id="pdfaye_classe_action">
+          <field name="name">Classe Action Menu</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">tp.classe.pdfaye</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+        <!-- La vue Tree UE -->
+        <record id="pdfaye_ue_tree" model="ir.ui.view">
+            <field name="name">pdfaye_ue_tree</field>
+            <field name="model">tp.ue.pdfaye</field>
+            <field name="arch" type="xml">
+                <tree string="UE">
+                  <field name="nom_ue"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- La vue Formulaire UE -->
+        <record id="pdfaye_ue_form" model="ir.ui.view">
+            <field name="name">pdfaye_ue_form</field>
+            <field name="model">tp.ue.pdfaye</field>
+            <field name="arch" type="xml">
+              <form string="UE" version="7.0"> 
+                <group>                  
+                  <field name="nom_ue"/>
+                  <field name="ec_ids"/>
+                  <field name="classe_id"/>
+                  <field name="etudiant_ids"/>
+                </group>
+              </form>
+            </field>
+        </record>
+
+        <!-- Action du menu UE -->
+        <record model="ir.actions.act_window" id="pdfaye_ue_action">
+          <field name="name">UE Action Menu</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">tp.ue.pdfaye</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+        <!-- La vue Tree EC -->
+        <record id="pdfaye_ec_tree" model="ir.ui.view">
+            <field name="name">pdfaye_ec_tree</field>
+            <field name="model">tp.ec.pdfaye</field>
+            <field name="arch" type="xml">
+                <tree string="EC">
+                  <field name="nom_ec"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- La vue Formulaire EC -->
+        <record id="pdfaye_ec_form" model="ir.ui.view">
+            <field name="name">pdfaye_ec_form</field>
+            <field name="model">tp.ec.pdfaye</field>
+            <field name="arch" type="xml">
+              <form string="EC" version="7.0"> 
+                <group>                  
+                  <field name="nom_ec"/>
+                  <field name="ue_id"/>
+                </group>
+              </form>
+            </field>
+        </record>
+
+        <!-- Action du menu EC -->
+        <record model="ir.actions.act_window" id="pdfaye_ec_action">
+          <field name="name">EC Action Menu</field>
+          <field name="type">ir.actions.act_window</field>
+          <field name="res_model">tp.ec.pdfaye</field>
+          <field name="view_type">form</field>
+          <field name="view_mode">tree,form</field>
+        </record>
+
+        
+        
+        
+        
+
+
+    </data>
+</odoo>
